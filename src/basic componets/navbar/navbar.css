@@ -1,0 +1,45 @@
+.ChatHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ContactUserInfo {
+    display: flex;
+    align-items: center;
+}
+
+.ContactUserImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.ContactUserName {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.CallIcons {
+    font-size: 24px;
+    gap: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100px;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+/* You can add more styles as needed */

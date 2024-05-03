@@ -1,0 +1,94 @@
+.UserchatsEnv{
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    width: 25vw;
+    background-color: #d1000057;
+    padding: 5px;
+    background-color: rgba(17, 25,40, 0.75);
+    backdrop-filter: blur(10px) saturate(180%);
+    border-right: solid 1px #ccc;
+    border-radius: 10px 0 0 10px; /* top-left, top-right, bottom-right, bottom-left */
+}
+
+/* Hide scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+.SearchBar {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Userchats{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+}
+
+.SearchBar input[type='text'] {
+    padding: 8px;
+    width: 70%;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+}
+
+.SearchBar button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.UserInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.UserInfo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.AddButton {
+    padding: 8px 15px;
+    background-color: #28a745; /* Green color, you can change it */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; /* Adjust as needed */
+}
+
+.AddButton:hover {
+    background-color: #218838; /* Darker green color on hover, you can change it */
+}

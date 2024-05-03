@@ -1,0 +1,29 @@
+.chat-card {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    width: clamp(300px, 50%, 600px);
+}
+
+.chat-card-header {
+    margin-bottom: 10px;
+}
+
+.chat-card-title {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+.chat-card-content {
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.chat-card-content p {
+    margin: 0;
+    width: auto;
+    overflow-wrap: break-word;
+}

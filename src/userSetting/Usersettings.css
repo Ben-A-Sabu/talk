@@ -1,0 +1,87 @@
+.CurrentUserSetting{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;      
+    height: 95vh;
+    background-color: rgba(17, 25,40, 0.75);
+    backdrop-filter: blur(10px) saturate(180%);
+    border-left: solid 1px #ccc;
+    border-radius: 0 10px 10px 0; /* top-left, top-right, bottom-right, bottom-left */
+}
+.CurrentUserImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+    object-fit: cover;
+    }
+
+    .CurrentUserInfo {
+        display: flex;
+        justify-content: space-between ;  
+        width: 25vw;
+        height: 30vh;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: solid 1px #ccc;
+    }
+
+    .CurrentUserName {
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .UserQuote {
+
+        font-style: italic;
+    }
+
+.UserSettings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.settings{
+
+ 
+    height: 10vh;
+    text-align: center ;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+.dropdown {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    width: 20px;    
+    height: 20px;
+    border-radius: 100px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.BlockButton {
+    background-color: #dc3545; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.BlockButton:hover {
+    background-color: #c82333; /* Darker red color on hover */
+}
+
