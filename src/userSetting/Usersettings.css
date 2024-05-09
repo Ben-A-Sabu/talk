@@ -1,10 +1,9 @@
 .CurrentUserSetting{
+    color: white;
     display: flex;
     flex-direction: column;
     gap: 10px;      
     height: 95vh;
-    background-color: rgba(17, 25,40, 0.75);
-    backdrop-filter: blur(10px) saturate(180%);
     border-left: solid 1px #ccc;
     border-radius: 0 10px 10px 0; /* top-left, top-right, bottom-right, bottom-left */
 }
@@ -43,6 +42,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    height: 50vh;
 }
 
 
@@ -53,35 +53,107 @@
     text-align: center ;
     margin: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 10px;
     align-items: center;
 
 
 }
 
 .dropdown {
-    background-color: #4CAF50; /* Green */
+    background-color: #020202; /* Green */
     border: none;
     color: white;
-    width: 20px;    
-    height: 20px;
+    width: clamp(15px, 20vw, 25px); 
+    height: clamp(15px, 20vh, 25px);
     border-radius: 100px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 
-.BlockButton {
-    background-color: #dc3545; /* Red color */
+.Button {
+   
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px;
+    width: 80%;
     cursor: pointer;
 }
+
+#Block{
+    background-color: #dc3545; /* Red color */
+}
+
+#Block:hover {
+    background-color: #c82333; /* Darker red color on hover */
+}
+
+#logout{
+    background-color: #007bff; /* Blue color */
+}
+
 
 .BlockButton:hover {
     background-color: #c82333; /* Darker red color on hover */
 }
 
+.shared-photos {
+    padding: 10px;
+    gap: 10px;
+    overflow-y: auto;
+    height: 20vh;
+    color: white;
+}
+
+/* Style for the shared photos container when shown */
+.shared-photos.active {
+    display: block; /* Show the shared photos */
+    animation: fadeIn 0.3s ease; /* Add animation for smooth appearance */
+}
+
+/* Animation for fadeIn effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+ 
+}
+
+.download-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Hover effect for the download button */
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.settingsbtn{
+    width: 100%;
+    padding: 10px;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  
+}

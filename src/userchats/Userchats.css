@@ -3,10 +3,7 @@
     flex-direction: column;
     height: 95vh;
     width: 25vw;
-    background-color: #d1000057;
     padding: 5px;
-    background-color: rgba(17, 25,40, 0.75);
-    backdrop-filter: blur(10px) saturate(180%);
     border-right: solid 1px #ccc;
     border-radius: 10px 0 0 10px; /* top-left, top-right, bottom-right, bottom-left */
 }
@@ -21,6 +18,8 @@
     margin: 15px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
 
 }
 
@@ -31,20 +30,33 @@
 
 }
 
-.SearchBar input[type='text'] {
+.search-input {
     padding: 8px;
     width: 70%;
-    border-radius: 5px 0 0 5px;
-    border: 1px solid #ccc;
+    border-radius: 5px ;
+    outline: none;
+    background-color: #333;
+    border: none;
+
 }
 
-.SearchBar button {
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: #fff;
+.search-container {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #333;
     border: none;
-    border-radius: 0 5px 5px 0;
+
+}
+
+.search-button{
+    padding: 8px;
+  border: none;
+    color: #000000;
+    border-radius: 50px;
     cursor: pointer;
+    background-color: #333;
+    border: none;
 }
 
 
@@ -80,15 +92,17 @@
 }
 
 .AddButton {
-    padding: 8px 15px;
-    background-color: #28a745; /* Green color, you can change it */
+    background-color: #000000; /* Green color, you can change it */
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px; /* Adjust as needed */
+    width: clamp(20px, 40px, 30px);
+    height: clamp(20px, 40px, 30px);
+    align-items: center;
 }
 
 .AddButton:hover {
-    background-color: #218838; /* Darker green color on hover, you can change it */
+    background-color: #000000; /* Darker green color on hover, you can change it */
 }
+

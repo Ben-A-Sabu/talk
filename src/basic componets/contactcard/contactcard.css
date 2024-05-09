@@ -15,11 +15,15 @@
     margin: 0;
     font-size: 18px;
     font-weight: bold;
+    color: #333 ;
 }
 
 .ContactInfo p {
     margin: 5px 0 0;
     font-size: 14px;
+    width: auto;
+    overflow-wrap: break-word;
+    color: #333 ;
 }
 
 .image{
@@ -27,4 +31,5 @@
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
+    object-fit: cover;
 }

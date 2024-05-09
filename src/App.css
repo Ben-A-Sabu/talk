@@ -6,11 +6,16 @@
 }
 
 .Layout{
- height: 100vh;   
-display: flex;
-flex-direction: row;
+ height: 100vh;  
+ width: 100vw; 
+background-image: url('../public/assets/bg1.jpg');
 padding: 20px;
-background-image: url('../public/assets/bg.jpg');
 }
 
+.Layout-container{
+    background-color: rgba(17, 25,40, 0.75);
+    backdrop-filter: blur(10px) saturate(180%);
+    border-radius: 10px;
+
+}
 

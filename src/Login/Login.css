@@ -1,0 +1,47 @@
+#Login-Page{
+    width: 95vw;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+
+.container{
+    height: 95vh;
+    width: 48.5vw;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{
+    
+    height: 50vh;
+    width: 40vw;
+    display: flex;
+   justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(17, 25,40, 0.75);
+    border-radius: 10px;
+    max-width: 40vw;
+
+}
+
+
+
+
+.input-detail{
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #333;
+    height: clamp(30px, 5vh, 50px);
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    width: 20vw;
+}

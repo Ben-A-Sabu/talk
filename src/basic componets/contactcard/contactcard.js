@@ -8,7 +8,10 @@ const ContactCard = ({ name, lastMessage,onClick }) => {
             <img src='https://via.placeholder.com/150' alt='profile' className='image' />
             <div className='ContactInfo'>
                 <h3>{name}</h3>
-                <p>Last message: {lastMessage}</p>
+               {
+                lastMessage!==undefined?
+                <p>Last message: {lastMessage}</p>:null
+               } 
             </div>
         </div>
     );
