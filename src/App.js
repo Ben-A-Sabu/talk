@@ -14,12 +14,12 @@ function App() {
   return (
     <div className="Layout">
       <div className='Layout-container row'>
-     {/* <Login />*/}
-
+     <Login />
+{/* 
       <Userchats onSelectUser={setSelectedUser} />
       <ChatArea selectedUser={selectedUser} />
       <Usersettings selectedUser={selectedUser} />
-      
+      */}
       <Notification />
       </div>
     </div>

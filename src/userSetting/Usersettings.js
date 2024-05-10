@@ -37,41 +37,41 @@ export default function Usersettings({ selectedUser }) {
           </button>
         </div>
 
-        {showPhotos && (
-          <div className='shared-photos'>
-            <div className="image-container">
-              <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
-              <span>Image 1.png</span>
-              <button className="download-button">
-                <FontAwesomeIcon icon={faDownload} />
-              </button>
-            </div>
-            <div className="image-container">
-              <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
-              <span>Image 2.png</span>
-              <button className="download-button">
-                <FontAwesomeIcon icon={faDownload} />
-              </button>
+<div className={`shared-photos ${showPhotos ? 'show' : ''}`}>
+  {showPhotos && (
+    <div>
+      <div className="image-container">
+        <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
+        <span>Image 1.png</span>
+        <button className="download-button">
+          <FontAwesomeIcon icon={faDownload} />
+        </button>
+      </div>
+      <div className="image-container">
+        <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
+        <span>Image 2.png</span>
+        <button className="download-button">
+          <FontAwesomeIcon icon={faDownload} />
+        </button>
+      </div>
+      <div className="image-container">
+        <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
+        <span>Image 3.png</span>
+        <button className="download-button">
+          <FontAwesomeIcon icon={faDownload} />
+        </button>
+      </div>
+      <div className="image-container">
+        <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
+        <span>Image 4.png</span>
+        <button className="download-button">
+          <FontAwesomeIcon icon={faDownload} />
+        </button>
+      </div>
+    </div>
+  )}
+</div>
 
-            </div>
-            <div className="image-container">
-              <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
-              <span>Image 2.png</span>
-              <button className="download-button">
-                <FontAwesomeIcon icon={faDownload} />
-              </button>
-
-            </div>
-            <div className="image-container">
-              <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
-              <span>Image 2.png</span>
-              <button className="download-button">
-                <FontAwesomeIcon icon={faDownload} />
-              </button>
-
-            </div>
-          </div>
-        )}
 
 <div className="settings"> Shared Photos
           <button className='dropdown' onClick={togglePhotos}>
