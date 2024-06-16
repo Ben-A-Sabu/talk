@@ -3,11 +3,58 @@ import ContactCard from '../basic componets/contactcard/contactcard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import AddUser from '../basic componets/addUser/AddUser';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import useUserStore from '../library/Userstore';
+import chatStore from '../library/Chatstore';
+import { doc, onSnapshot, getDoc } from "firebase/firestore";
+import { db } from '../library/firebase';
 
-export default function Userchats({ onSelectUser }) {
 
+export default function Userchats() {
+
+
+  const { currentUser } = useUserStore();
   const [showAddUser, setAddUser] = useState(false);
+  const [chats, setChats] = useState([]);
+  const { changeChat } = chatStore();
+
+  const handleSelect = (chatId,chats) => {
+    changeChat(chatId,chats);
+    console.log(chats);
+
+  }
+
+
+  useEffect(() => {
+    const unsub = onSnapshot(doc(db, 'userchats', currentUser.id), async (response) => {
+      const items = response.data().chats;
+       
+      const Promises = items.map(async (item) => {
+        const userDocRef = doc(db, 'users', item.recieverId);
+        const userDocSnap = await getDoc(userDocRef);
+        const userDoc = {
+          id: userDocSnap.id,
+          name: userDocSnap.data().Username,
+          lastMessage: item.lastMessage,
+          time: item.time,
+          avatar: userDocSnap.data().Avatar,
+          blockedUsers: userDocSnap.data().blockedUsers,
+          chatId: item.chatId
+        }
+        return { ...item, userDoc };
+      });
+
+      const chatData = await Promise.all(Promises);
+      setChats(chatData.sort((a, b) => b.updatedAt - a.updatedAt));
+
+
+    });
+    return () => {
+      unsub();
+    };
+  }
+    , [currentUser.id]);
+
 
   function ShowAddUser() {
     setAddUser(!showAddUser);
@@ -17,8 +64,8 @@ export default function Userchats({ onSelectUser }) {
     <div className='UserchatsEnv'>
       <div className="UserInfo">
         <div className='user'>
-          <img src="../assets/m1.webp" alt="namae" className="UserImage" />
-          <span className="UserName">Ben</span>
+          <img src={currentUser.Avatar || 'https://via.placeholder.com/150'} alt="namae" className="UserImage" />
+          <span className="UserName">{currentUser.Username}</span>
         </div>
         <span>edit</span>
       </div>
@@ -31,14 +78,17 @@ export default function Userchats({ onSelectUser }) {
       </div>
       {showAddUser && <AddUser />}
       <div className='Userchats'>
-        <ContactCard name='Ben' lastMessage='Hello' onClick={() => onSelectUser({ name: 'Ben', image: '../assets/m1.webp' })} />
-        <ContactCard name='John' lastMessage='Hi' onClick={() =>
-          console.log('John') ||
-          onSelectUser({ name: 'John', image: '../assets/m1.webp' })} />
-        <ContactCard name='Doe' lastMessage='How are you' onClick={() => onSelectUser({ name: 'Doe', image: '../assets/m1.webp' })} />
-        <ContactCard name='Jane' lastMessage='I am fine' onClick={() => onSelectUser({ name: 'Jane', image: '../assets/m1.webp' })} />
+        {chats.map((chat, index) => {
+          return <ContactCard key={index} chats={chat.userDoc} onClick={
+            () => {
+              handleSelect(chat.chatId,chat.userDoc)
+            }
+          } />;
+        })}
       </div>
     </div>
   );
 }
+
+
 

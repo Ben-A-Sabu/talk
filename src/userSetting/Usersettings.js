@@ -2,30 +2,34 @@ import React, { useState } from 'react';
 import './Usersettings.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faDownload, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { auth } from '../library/firebase';
+import ChatStore from '../library/Chatstore';
+import useUserStore from '../library/Userstore';
+export default function Usersettings() {
 
-export default function Usersettings({ selectedUser }) {
   const [showPhotos, setShowPhotos] = useState(false);
-
+  const { changeBlock,user,isRecieverBlocked} = ChatStore();
   function togglePhotos() {
     setShowPhotos(!showPhotos);
      
   }
 
+  function handleBlock(id) {
+   
+   changeBlock(id);
+  }
+
   return (
     <div className="CurrentUserSetting">
-      {selectedUser && (
+      {user && (
         <div className="CurrentUserInfo">
-          <img src={selectedUser.image} alt={selectedUser.name} className="CurrentUserImage" />
-          <span className="CurrentUserName">{selectedUser.name}</span>
-          <blockquote className="UserQuote">
-            Just Keep Believing IN yourself
-          </blockquote>
-          <span>edit</span>
+          <img src={user.avatar} alt={user.name} className="CurrentUserImage" />
+          <span className="CurrentUserName">{user.name}</span>
+          <blockquote className="UserQuote"> Just Keep Believing in yourself </blockquote>
         </div>
       )}
 
       <div className="UserSettings">
-
         <div className="settings">Chat Settings
           <button className='dropdown'>
             <FontAwesomeIcon icon={faAngleDown} />
@@ -83,10 +87,10 @@ export default function Usersettings({ selectedUser }) {
 
       </div>
       <div className='settingsbtn'>
-        <button className="Button" id='Block'>Block User</button>
-        <button className="Button" id='logout'>LogOut</button>
-
+        <button className="Button" id='Block' onClick={()=>handleBlock(user.id)} > {isRecieverBlocked ? 'Unblock User' : 'Block User'}</button>
+        <button className="Button" id='logout' onClick={()=>auth.signOut()}>LogOut</button>
       </div>
     </div>
   );
 }
+

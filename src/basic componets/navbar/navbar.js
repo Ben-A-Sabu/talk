@@ -7,7 +7,8 @@ const Navbar = ({ user }) => {
     return (
         <div className='ChatHeader'>    
             <div className="ContactUserInfo ">
-                <img src="../assets/m1.webp" alt="name" className="ContactUserImage" />
+            <img  src={user.avatar ? user.avatar : "../assets/m1.webp"} alt="user_profile" className="ContactUserImage" />
+
                 <div className='col'>
                     <span className="ContactUserName">{user.name}</span>
                     <span className="ContactUserStatus">Online</span>

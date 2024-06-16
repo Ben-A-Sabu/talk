@@ -8,7 +8,6 @@
 .Layout{
  height: 100vh;  
  width: 100vw; 
-background-image: url('../public/assets/bg1.jpg');
 padding: 20px;
 }
 
@@ -19,3 +18,25 @@ padding: 20px;
 
 }
 
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(17, 25, 40, 0.568);
+    backdrop-filter: blur(10px) saturate(180%);
+    font-size: clamp(1rem, 3vw, 3rem);
+    color: white;
+}
+
+.no-chat-selected{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-size: clamp(1rem, 3vw, 3rem);
+    color: white;
+}
