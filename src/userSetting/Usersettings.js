@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faDownload, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { auth } from '../library/firebase';
 import ChatStore from '../library/Chatstore';
-import useUserStore from '../library/Userstore';
 export default function Usersettings() {
 
   const [showPhotos, setShowPhotos] = useState(false);
@@ -13,6 +12,8 @@ export default function Usersettings() {
     setShowPhotos(!showPhotos);
      
   }
+
+
 
   function handleBlock(id) {
    

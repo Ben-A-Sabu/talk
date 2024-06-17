@@ -16,8 +16,7 @@ const uploadImage = async (file) => {
 
   // Listen for state changes, errors, and completion of the upload.
   return new Promise((resolve, reject) => {
-    uploadTask.on('state_changed',
-      (snapshot) => {
+    uploadTask.on('state_changed',(snapshot) => {
         // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
        // const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       }, 
@@ -36,8 +35,7 @@ const uploadImage = async (file) => {
            default:
             toast.error('An unknown error occurred'); 
         }
-      }, 
-      () => {
+      }, () => {
         // Upload completed successfully, now we can get the download URL
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           resolve(downloadURL);

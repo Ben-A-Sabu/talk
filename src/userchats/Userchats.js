@@ -1,7 +1,7 @@
 import './Userchats.css';
 import ContactCard from '../basic componets/contactcard/contactcard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch  } from '@fortawesome/free-solid-svg-icons';
 import AddUser from '../basic componets/addUser/AddUser';
 import { useEffect, useState } from 'react';
 import useUserStore from '../library/Userstore';
@@ -16,12 +16,22 @@ export default function Userchats() {
   const { currentUser } = useUserStore();
   const [showAddUser, setAddUser] = useState(false);
   const [chats, setChats] = useState([]);
-  const { changeChat } = chatStore();
+  const { changeChat} = chatStore();
 
   const handleSelect = (chatId,chats) => {
     changeChat(chatId,chats);
-    console.log(chats);
-
+    if (window.innerWidth < 600) {
+      chatStore.setState({ischatClicked:true});
+      chatStore.setState({isSettingsClicked:false});
+      chatStore.setState({isUserchat:false});
+      chatStore.setState({isWindowsize:true});  
+   }
+   else{
+    chatStore.setState({ischatClicked:true});
+    chatStore.setState({isSettingsClicked:true});
+    chatStore.setState({isUserchat:true});
+    chatStore.setState({isWindowsize:false});
+   }
   }
 
 
@@ -78,6 +88,7 @@ export default function Userchats() {
       </div>
       {showAddUser && <AddUser />}
       <div className='Userchats'>
+
         {chats.map((chat, index) => {
           return <ContactCard key={index} chats={chat.userDoc} onClick={
             () => {

@@ -164,3 +164,13 @@
     transition: transform 0.3s ease-in-out; /* Define the transition property */
     
   }
+
+@media screen and  (max-width: 600px) {
+    .CurrentUserSetting {
+      width: 100%;
+      border: none;
+    }
+    .CurrentUserInfo{
+        width: 100%;
+    }
+}

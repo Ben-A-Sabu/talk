@@ -2,7 +2,6 @@
 /* zustand is a small, fast and scaleable bearbones state-management solution. It has a tiny footprint and has no dependencies. */
 /* it is used to avoid prop drilling and to avoid using context api */  
 
-
 import { toast } from 'react-toastify';
 import { create } from 'zustand'
 import { db } from './firebase';
@@ -18,20 +17,17 @@ const useUserStore = create((set) => ({
         toast.error('User not found');
         return;
     }
-
-     try {
+    try {
       const docRef = doc(db, 'users', uid);  
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         set({ currentUser: docSnap.data(), isLoading: false });
       }
-  
-    } catch (error) {
+    }
+    catch (error) {
         set({ currentUser: null, isLoading: false });
         toast.error('User not found');
-        }
-
-
+    }
   },
 }))
 
