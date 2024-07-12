@@ -1,28 +1,42 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
 }
-
+.col{
+ display: flex;
+ flex-direction: column;
+}
+.row{
+ display: flex;
+ flex-direction: row;
+}
+img{
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ object-fit: cover;
+}
+.Button {
+ width: 80%;
+ color: #fff;
+ border: none;
+ border-radius: 5px;
+ padding: 10px;
+ cursor: pointer;
+}
 .Layout{
  height: 100vh;  
  width: 100vw; 
-padding: 20px;
-
+ padding: 20px;
 }
-
 .Layout-container{
-    background-color: rgba(17, 25,40, 0.75);
-    backdrop-filter: blur(10px) saturate(180%);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-
-
+ background-color: rgba(17, 25,40, 0.75);
+ backdrop-filter: blur(10px) saturate(180%);
+ border-radius: 10px;
+ display: flex;
+ flex-direction: row;
 }
-
-
 .loading{
     display: flex;
     justify-content: center;

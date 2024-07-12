@@ -7,17 +7,17 @@ import ChatStore from '../library/Chatstore';
 export default function Usersettings() {
 
   const [showPhotos, setShowPhotos] = useState(false);
-  const { changeBlock,user,isRecieverBlocked} = ChatStore();
+  const { changeBlock, user, isRecieverBlocked } = ChatStore();
   function togglePhotos() {
     setShowPhotos(!showPhotos);
-     
+
   }
 
 
 
   function handleBlock(id) {
-   
-   changeBlock(id);
+
+    changeBlock(id);
   }
 
   return (
@@ -42,54 +42,51 @@ export default function Usersettings() {
           </button>
         </div>
 
-<div className={`shared-photos ${showPhotos ? 'show' : ''}`}>
-  {showPhotos && (
-    <div>
-      <div className="image-container">
-        <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
-        <span>Image 1.png</span>
-        <button className="download-button">
-          <FontAwesomeIcon icon={faDownload} />
-        </button>
-      </div>
-      <div className="image-container">
-        <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
-        <span>Image 2.png</span>
-        <button className="download-button">
-          <FontAwesomeIcon icon={faDownload} />
-        </button>
-      </div>
-      <div className="image-container">
-        <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
-        <span>Image 3.png</span>
-        <button className="download-button">
-          <FontAwesomeIcon icon={faDownload} />
-        </button>
-      </div>
-      <div className="image-container">
-        <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
-        <span>Image 4.png</span>
-        <button className="download-button">
-          <FontAwesomeIcon icon={faDownload} />
-        </button>
-      </div>
-    </div>
-  )}
-</div>
-
-
-<div className="settings"> Shared Photos
-          <button className='dropdown' onClick={togglePhotos}>
-            {
-              showPhotos ? <FontAwesomeIcon icon={faAngleUp} /> : <FontAwesomeIcon icon={faAngleDown} />
-            }
-          </button>
+        <div className={`shared-photos ${showPhotos ? 'show' : ''}`}>
+          {showPhotos && (
+            <div>
+              <div className="image-container">
+                <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
+                <span>Image 1.png</span>
+                <button className="download-button">
+                  <FontAwesomeIcon icon={faDownload} />
+                </button>
+              </div>
+              <div className="image-container">
+                <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
+                <span>Image 2.png</span>
+                <button className="download-button">
+                  <FontAwesomeIcon icon={faDownload} />
+                </button>
+              </div>
+              <div className="image-container">
+                <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
+                <span>Image 3.png</span>
+                <button className="download-button">
+                  <FontAwesomeIcon icon={faDownload} />
+                </button>
+              </div>
+              <div className="image-container">
+                <img src='https://via.placeholder.com/150' alt="img" className='chat-card-image' />
+                <span>Image 4.png</span>
+                <button className="download-button">
+                  <FontAwesomeIcon icon={faDownload} />
+                </button>
+              </div>
+            </div>
+          )}
         </div>
 
+
+        <div className="settings"> Shared Photos
+          <button className='dropdown' onClick={togglePhotos}>{
+            showPhotos ? <FontAwesomeIcon icon={faAngleUp} /> : <FontAwesomeIcon icon={faAngleDown} />
+          }</button>
+        </div>
       </div>
       <div className='settingsbtn'>
-        <button className="Button" id='Block' onClick={()=>handleBlock(user.id)} > {isRecieverBlocked ? 'Unblock User' : 'Block User'}</button>
-        <button className="Button" id='logout' onClick={()=>auth.signOut()}>LogOut</button>
+        <button className="Button" id='Block' onClick={() => handleBlock(user.id)} > {isRecieverBlocked ? 'Unblock User' : 'Block User'}</button>
+        <button className="Button" id='logout' onClick={() => auth.signOut()}>LogOut</button>
       </div>
     </div>
   );

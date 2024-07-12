@@ -3,11 +3,13 @@ import React from 'react';
 
 export default function ChatCard(props) {
     // Extracting props
-    const { title, content, className,img } = props;
+    const { title, content, className,img,photo} = props;
     const placeholderImage = 'https://via.placeholder.com/150';
     const imageSrc = img ? img : placeholderImage;
     const cardClasses = `chat-card ${className}`;
     
+  
+
     return (
         <div className={cardClasses}>
             <div className='chat-card-header row'>
@@ -16,6 +18,7 @@ export default function ChatCard(props) {
             </div>
             <div className='chat-card-body'>
                 <p className='chat-card-content'>{content}</p>
+                {photo && <img src={photo} alt={'image'}  />}
             </div>
         </div>
     );

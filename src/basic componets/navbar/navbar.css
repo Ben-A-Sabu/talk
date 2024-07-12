@@ -32,14 +32,6 @@
     width: 100px;
 }
 
-.col{
-    display: flex;
-    flex-direction: column;
-}
 
-.row{
-    display: flex;
-    flex-direction: row;
-}
 
 /* You can add more styles as needed */

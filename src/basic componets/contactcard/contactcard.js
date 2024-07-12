@@ -1,6 +1,8 @@
 // ContactCard.js
 import React from 'react';
 import './contactcard.css'; // Import your CSS file for styling
+import { db } from '../../library/firebase';
+import { doc, getDoc } from 'firebase/firestore';
 const ContactCard = ({ chats, onClick }) => {
   if (!chats) {
     return null; // or any other placeholder UI indicating loading
@@ -17,7 +19,7 @@ const ContactCard = ({ chats, onClick }) => {
 
   // Use the helper function to truncate the last message to 3 words
   const truncatedMessage = chats.lastMessage ? truncateMessage(chats.lastMessage, 3) : '';
-
+    
   return (
     <div className='ContactCard row' onClick={onClick}>
       <img src={chats.avatar} alt='profile' className='image' />
@@ -25,9 +27,10 @@ const ContactCard = ({ chats, onClick }) => {
         <h3>{chats.name}</h3>
         {
           chats.lastMessage !== undefined ?
-          <p>Last message: {truncatedMessage}</p> : null
+          <p>Last message: {truncatedMessage} </p> : null
         }
         <p>{chats.time}</p>
+       
       </div>
     </div>
   );

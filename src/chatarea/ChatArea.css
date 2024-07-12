@@ -1,45 +1,20 @@
-.ChatEnv{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .ChatEnv{
     height: 95vh;
     width: 50vw;
+    justify-content: space-between;
     overflow: hidden;
-}
-  
-  .send-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
   }
-  
-  .send-button:hover {
-    background-color: #0056b3;
-  }
-  
   .chat-area{
-
     height: 80vh;
     padding: 20px;
     overflow-y: auto;
-    
   }
-
   .footer {
-     height: 10vh;
     padding: 10px;
-  }
-  
-  .footer-content {
-    display: flex;
     align-items: center;
   }
-  
   .message-input {
+    height: clamp(30px, 5vh, 30px);
     flex: 1;
     padding: 8px;
     border-radius: 5px;
@@ -48,31 +23,24 @@
     border: none;
     outline: none;
   }
-
   .message-input:focus {
     background-color: #444;
   }
-  
-  .icon-button, .send-button {
+  .icon-button {
+    padding: 5px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 5px;
     font-size: 18px;
     color: #555;
   }
-  
-  .icon-button:hover, .send-button:hover {
+  .icon-button:hover, #sent-button:hover {
     color: #333;
   }
-  
-  .send-button {
+  #sent-button {
     background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    padding: 8px 15px;
+    width: fit-content;
   }
-
   .picker{
     position: relative;
     bottom: 500px;
@@ -80,13 +48,11 @@
     width: auto;
     height: auto;
   }
-
   .sent-message {
     display: flex;
     flex-direction: column;
     position: relative;
     left: 50%;
-    
   }
 
  @media screen and (max-width: 600px) {

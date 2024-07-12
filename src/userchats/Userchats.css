@@ -1,117 +1,57 @@
 .UserchatsEnv{
-    display: flex;
-    flex-direction: column;
     height: 95vh;
     width: 25vw;
     padding: 5px;
     border-right: solid 1px #ccc;
     border-radius: 10px 0 0 10px; /* top-left, top-right, bottom-right, bottom-left */
 }
-
-/* Hide scrollbar for webkit browsers */
 ::-webkit-scrollbar {
     display: none;
 }
-
-
-.SearchBar {
-    margin: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-}
-
 .Userchats{
-    display: flex;
-    flex-direction: column;
     overflow: auto;
-
 }
-
 .search-input {
-    padding: 8px;
     width: 70%;
+    padding: 8px;
+    border: none;
     border-radius: 5px ;
     outline: none;
     background-color: #333;
-    border: none;
-
 }
-
 .search-container {
-    display: flex;
-    align-items: center;
+    margin: 15px;
+    gap: 10px;
+    border: none;
     border-radius: 5px;
     background-color: #333;
-    border: none;
-
 }
-
 .search-button{
     padding: 8px;
-  border: none;
-    color: #000000;
+    border: none;
     border-radius: 50px;
     cursor: pointer;
+    color: #000000;
     background-color: #333;
-    border: none;
 }
-
-
-.col{
-    display: flex;
-    flex-direction: column;
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
-}
-
 .UserInfo{
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
 }
-
-.user{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
+#AddUser {
+  width:fit-content;  
+  background-color: inherit;
+  font-size: 1rem;
 }
-
-.UserInfo img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+#AddUser:hover {
+    background-color: #469734;
 }
-
-.AddButton {
-    background-color: #000000; /* Green color, you can change it */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: clamp(20px, 40px, 30px);
-    height: clamp(20px, 40px, 30px);
-    align-items: center;
-}
-
-.AddButton:hover {
-    background-color: #000000; /* Darker green color on hover, you can change it */
-}
-
 .UserName{
     font-size: 1.2rem;
     font-weight: 500;
     color: #fff;
 }
-
 @media screen and (max-width: 600px) {
     .UserchatsEnv{
         width: 100%;

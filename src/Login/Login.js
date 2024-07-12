@@ -139,7 +139,7 @@ export default function Login() {
                     <input type="text" placeholder="Username" className='input-detail' name='Username' />
                     <input type="text" placeholder="Email" className='input-detail' name='Email' />
                     <input type="password" placeholder="Set Password" className='input-detail' name='Password' />
-                    <button type="submit" className='send-button' id='signUp_btn'  >
+                    <button type="submit" className='Button' id='signUp_btn'  >
                         {loadingSignup ? 'Loading...' : 'Sign-Up'}
                     </button>
                 </form>
